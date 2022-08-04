@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  redis-server:
+    container_name: redis-server
+    hostname: redis-server
+    image: redis
+    ports:
+      - 6379:6379
+  
+  node-app:
+    container_name: node-app
+    hostname: node-app
+    build: .
+    ports:
+      - 8081:8081

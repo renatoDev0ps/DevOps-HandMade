@@ -1,5 +1,5 @@
 #/bin/sh
-sudo yum -y install epel-release
+sudo yum -y install epel-release net-tools
 echo "inicio da instalacao do ansible"
 sudo yum -y install ansible
 cat <<EOT >> /etc/hosts

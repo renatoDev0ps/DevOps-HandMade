@@ -1,5 +1,6 @@
 #!/bin/bash
 
+yum install net-tools telnet -y
 cat << EOT >> /home/vagrant/.ssh/authorized_keys
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNKVFrU9KMcHLf+M6Hqmc4agEMRgHrJ7vlG8/XhbK8M1KDf9syZI+i4u7DnjxFyje7YM9OVCU5y/VwJVbEKD7i8hh1PiBRUaNoEKrsCctaNKP0fFXJLoMkNmc1hPz/S/tftpBw+m6lwbPj0/ZsGltBxiz91d7NOGpSDlK1r4mzHCvpuql7Y1ddL9udz3FKqWJ4dDJ3Op/nwjcKFdnxVpX9OoaWF23vJfGnhq1a6BFUASCYPebyg+FWxzmEXTnpihFmdBxF4DdehZEgaQ/KuVKQhKm1j2iga9riz1CC0R61FJHpokmxo2ICKc8ULIipesnBgYghB9vW1aVzWqtQE/kN vagrant@control-node
 EOT

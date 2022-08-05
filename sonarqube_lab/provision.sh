@@ -35,3 +35,6 @@ echo 'export PATH=$PATH:/opt/sonar-scanner/bin' | sudo tee -a /etc/profile
 # instalacao do nodejs
 curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 yum install nodejs -y
+
+# redis-admin token
+# bd59bbecb12ea951fd7862d5fccbdc8ccf99ec43

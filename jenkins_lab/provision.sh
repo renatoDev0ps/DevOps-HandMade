@@ -38,5 +38,10 @@ echo 'export PATH=$PATH:/opt/sonar-scanner/bin' | sudo tee -a /etc/profile
 curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 yum install nodejs -y
 
+# instalacao do kubectl
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0775 kubectl /usr/local/bin/kubectl
+
+## kubectl version v1.22.3
 ### access token sonarqube
 ## 597bbc0d41814c20a1a960d445b87e6a

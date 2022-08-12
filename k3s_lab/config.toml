@@ -1,0 +1,31 @@
+[plugins.opt]
+path = "{{ .NodeConfig.Containerd.Opt }}"
+
+[plugins.cri]
+stream_server_address = "{{ .NodeConfig.AgentConfig.NodeName }}"
+stream_server_port = "10010"
+enable_selinux = false
+sandbox_image = "docker.io/rancher/pause:3.1"
+  [plugins.cri.containerd]
+    snapshotter = "overlayfs"
+  [plugins.cri.cni]
+    bin_dir = "{{ .NodeConfig.AgentConfig.CNIBinDir }}"
+    conf_dir = "{{ .NodeConfig.AgentConfig.CNIConfDir }}"
+
+#[plugins.cri.registry.mirrors]
+#  [plugins.cri.registry.mirrors."docker.io"]
+#    endpoint = ["https://registry-1.docker.io"]
+#  [plugins.cri.registry.mirrors."http://192.168.1.10:8123"]
+#    endpoint = ["http://192.168.1.10:8123"]
+  [plugins.cri.containerd.runtimes.runc]
+    runtime_type = "io.containerd.runc.v2"
+    
+  [plugins.cri.registry]
+    [plugins.cri.registry.mirrors]
+      [plugins.cri.registry.mirrors."192.168.1.10:8123"]
+        endpoint = ["http://192.168.1.10:8123"]
+      [plugins.cri.registry.mirrors."192.168.1.10:8123".tls]
+        insecure_skip_verify = true
+      [plugins.cri.registry.configs."192.168.1.10:8123".auth]
+        username = "jenkins"
+        password  = "jenkins123"

@@ -1,0 +1,31 @@
+# Commands
+cd /vagrant
+tar -xvf node_exporter-1.4.0-rc.0.linux-amd64.tar.gz 
+mv node_exporter-1.4.0-rc.0.linux-amd64 /opt/
+cd /opt
+ls
+cd node_exporter-1.4.0-rc.0.linux-amd64/
+ls
+nohup ./node_exporter &
+ls
+tail - nohup.out
+yum install -y telnet net-tools yum-utils git wget unzip
+telnet 192.168.1.16 9100
+docker
+yum install -y epel-release wget yum-utils git unzip telnet net-tools
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce docker-ce-cli containerd.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker
+docker
+vi /vagrant/prometheus.yml 
+docker run -d -p 9090:9090 --restart unless-stopped -v /vagrant/prometheus.yml:/etc/prometheus/prometheus.yml --name prometheus prom/prometheus
+docker ps 
+docker logs -f prometheus 
+free
+docker ps -a
+ps aux | grep node
+stress
+yum install -y stress
+stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 60s

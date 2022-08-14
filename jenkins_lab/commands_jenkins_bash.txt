@@ -1,0 +1,112 @@
+# Commands
+systemctl jenkins status
+ps aux | grep java
+service jenkins start
+ps aux | grep java
+service jenkins status
+ls -la /var/log/jenkins/
+ps aux | grep java
+cat /var/lib/jenkins/secrets/initialAdminPassword
+yum install git
+usermod -aG docker jenkins
+chown jenkins:docker /var/run/docker.sock
+docker ps
+service jenkins status
+yum install net-tools -y
+telnet 192.168.1.8 9000
+yum install telnet -y
+telnet 192.168.1.8 9000
+yum install -y unzip
+wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+sudo mkdir -p /opt/sonar-scanner
+sudo unzip sonar-scanner-cli-4.6.2.2472-linux.zip -d /opt/
+sudo mv /opt/sonar-scanner-4.6.2.2472-linux/* /opt/sonar-scanner
+chown -R jenkins:jenkins /opt/sonar-scanner
+echo 'export PATH=$PATH:/opt/sonar-scanner/bin' | sudo tee -a /etc/profile
+ls -la sonar-scanner
+service sonar status
+cat /etc/profile
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+yum install nodejs -y
+sonar-scanner
+cd /var/lib/jenkins/workspace/
+ls -la
+cd redis-app
+ls -la
+cd ../
+ls -lha
+cp -r redis-app /root/
+cd /root
+ls -la
+cd redis-app/
+ls 
+docker build -t 1renatodevops/app .
+docker images
+docker login http://192.168.1.10:8123
+vi /etc/docker/
+ls /etc/docker/
+cat /etc/docker/key.json 
+vi /etc/docker/daemon.json
+service docker restart
+docker login http://192.168.1.10:8123
+docker images
+docker rmi -f 3385de591618 e71be5a1655b 19e69004ed8e c0586ac9df53 9c781c666286 b30b5bfc1015 fce42b115b1c 7febdf775745 35a000351bf4 f2fc1fec604a 699424fa6a17
+docker images
+docker tag 1renatodevops/app:latest http://192.168.1.10:8123/1renatodevops/app
+docker tag 1renatodevops/app:latest 192.168.1.10:8123/1renatodevops/app
+docker images
+docker push 192.168.1.10:8123/1renatodevops/app
+date
+timedatectl list-timezones
+ls -l /etc/localtime
+ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+ls -l /etc/localtime
+date
+yum install ntpdate -y
+ntpdate a.ntp.br
+systemctl enable ntpdate
+systemctl restart ntpdate
+ls -la
+cd redis-app/
+ls -la
+cat index.html
+cat index.html.1
+cat index.html.2
+cat index.html.3
+cat index.html.4
+ls -la
+history
+ls -a /etc/docker/
+cat /etc/docker/daemon.json 
+history
+docker images
+ls -la
+cd redis-app/
+ls -la
+history | grep build
+docker build -t devops/app .
+history | grep tag
+docker tag devops/app:latest 192.168.1.10:8123/devops/app
+docker tag devops/app:latest http://192.168.1.10:8123/devops/app
+docker images
+history | grep push
+docker push 192.168.1.10:8123/devops/app
+k get po -n devops
+ls -la
+history | grep enable
+systemctl status jenkins
+ls -la
+cd ../
+ls -la
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0775 kubectl /usr/local/bin/kubectl
+kubectl version
+su -s /bin/bash jenkins
+usermod -s /bin/bash jenkins
+sudo su - jenkins
+ls -la
+ls -la /home/vagrant/
+sudo su - jenkins
+history
+vi /tmp/commands_jenkins_bash.txt
+history >> /tmp/commands_jenkins_bash.txt

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing Jenkins and dependencies..."
-yum install -y epel-release git wget unzip net-tools telnet java-11-openjdk-devel
+yum install -y epel-release yum-utils git wget unzip net-tools telnet java-11-openjdk-devel stress
 # curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
 # sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 sudo wget --no-check-certificate -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
@@ -11,7 +11,6 @@ sudo systemctl daemon-reload
 service jenkins start
 
 ### Instalacao do docker e docker-compose
-sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum install docker-ce docker-ce-cli containerd.io -y
 sudo systemctl start docker
